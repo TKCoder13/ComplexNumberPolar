@@ -13,8 +13,15 @@ public class ComplexNumberPolar extends ComplexNumber {
         this.theta = theta;
     }
 
-    public ComplexNumberPolar(ComplexNumber cn) {
+    public ComplexNumberPolar(ComplexNumber cn) throws ArithmeticException {
         super();
+        this.radius = Math.sqrt(Math.pow(cn.real, 2) + Math.pow(cn.imag, 2));
+        try {
+            this.theta = Math.atan(cn.imag/cn.real);
+        } catch(ArithmeticException e) {
+            System.out.println("Cannot divide by 0");
+        }
+        
     }
 
     public double getRadius() {
@@ -42,6 +49,6 @@ public class ComplexNumberPolar extends ComplexNumber {
     }
 
     public ComplexNumberPolar[] roots(int n) {
-        
+
     }
 }
