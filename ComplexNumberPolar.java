@@ -16,4 +16,32 @@ public class ComplexNumberPolar extends ComplexNumber {
     public ComplexNumberPolar(ComplexNumber cn) {
         super();
     }
+
+    public double getRadius() {
+        return this.radius;
+    }
+
+    public double getTheta() {
+        return this.theta;
+    }
+
+    public String toString() {
+
+    }
+
+    public ComplexNumberPolar mult(ComplexNumberPolar rhs) {
+
+    }
+
+    public ComplexNumberPolar div(ComplexNumberPolar rhs) {
+
+    }
+
+    public ComplexNumberPolar pow(int n) {
+
+    }
+
+    public ComplexNumberPolar[] roots(int n) {
+        
+    }
 }
