@@ -32,11 +32,13 @@ public class ComplexNumberPolar extends ComplexNumber {
     }
 
     public String toString() {
-
+        return "";
     }
 
     public ComplexNumberPolar mult(ComplexNumberPolar rhs) {
-
+        double outRadius = this.radius * rhs.radius;
+        double outTheta = this.theta + rhs.theta;
+        return new ComplexNumberPolar(outRadius, outTheta);
     }
 
     public ComplexNumberPolar div(ComplexNumberPolar rhs) {
