@@ -31,6 +31,7 @@ public class ComplexNumberPolar extends ComplexNumber {
         return this.theta;
     }
 
+    @Override
     public String toString() {
         return "";
     }
@@ -41,15 +42,24 @@ public class ComplexNumberPolar extends ComplexNumber {
         return new ComplexNumberPolar(outRadius, outTheta);
     }
 
-    public ComplexNumberPolar div(ComplexNumberPolar rhs) {
-
+    public ComplexNumberPolar div(ComplexNumberPolar rhs) throws ArithmeticException {
+        try {
+            double outRadius = this.radius / rhs.radius;
+            double outTheta = this.theta - rhs.theta;
+            return new ComplexNumberPolar(outRadius, outTheta);
+        } catch(ArithmeticException e) {
+            System.out.println("Cannot divide by 0 (RHS Radius)");
+            throw e;
+        }
     }
 
     public ComplexNumberPolar pow(int n) {
-
+        double outRadius = Math.pow(this.radius, n);
+        double outTheta = n * this.theta;
+        return new ComplexNumberPolar(outRadius, outTheta);
     }
 
     public ComplexNumberPolar[] roots(int n) {
-
+        
     }
 }
