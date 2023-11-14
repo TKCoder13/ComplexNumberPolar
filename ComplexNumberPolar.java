@@ -59,7 +59,19 @@ public class ComplexNumberPolar extends ComplexNumber {
         return new ComplexNumberPolar(outRadius, outTheta);
     }
 
-    public ComplexNumberPolar[] roots(int n) {
-        
+    public ComplexNumberPolar[] roots(int n) throws ArithmeticException {
+        try {
+            ComplexNumberPolar[] cnpRoots = new ComplexNumberPolar[n];
+            double outRadius = Math.pow(this.radius, 1/n);
+            double[] outThetas = new double[n];
+            for (int k = 0; k < n; ++k) {
+                outThetas[k] = (this.theta + 2 * k * Math.PI) / n;
+                cnpRoots[k] = new ComplexNumberPolar(outRadius, outThetas[k]);
+            }
+            return cnpRoots;
+        } catch(ArithmeticException e) {
+            System.out.println("roots(): Cannot dviide by 0 (argument provided)");
+            throw e;
+        }
     }
 }
