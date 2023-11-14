@@ -21,7 +21,6 @@ public class ComplexNumberPolar extends ComplexNumber {
         } catch(ArithmeticException e) {
             System.out.println("Cannot divide by 0");
         }
-        
     }
 
     public double getRadius() {
