@@ -41,7 +41,6 @@ public class ComplexNumberPolar extends ComplexNumber {
 
     @Override
     public String toString() {
-        String output = "";
         return "" + String.format("%.6f", this.real) + " + " + 
             String.format("%.6f", this.imag) + "i : " + 
             String.format("%.6f", this.radius) + 
@@ -75,7 +74,7 @@ public class ComplexNumberPolar extends ComplexNumber {
     public ComplexNumberPolar[] roots(int n) throws ArithmeticException {
         try {
             ComplexNumberPolar[] cnpRoots = new ComplexNumberPolar[n];
-            double outRadius = Math.pow(this.radius, 1/n);
+            double outRadius = Math.pow(this.radius, 1 / n);
             double[] outThetas = new double[n];
             for (int k = 0; k < n; ++k) {
                 outThetas[k] = (this.theta + 2 * k * Math.PI) / n;
