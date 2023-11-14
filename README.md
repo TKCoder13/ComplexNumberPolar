@@ -1,20 +1,20 @@
 # CNP ToDo List
 
 ## Private Variables
-- [ ] radius: double
-- [ ] theta: double
+- [x] radius: double
+- [x] theta: double
 
 ## Methods 
-- [ ] ComplexNumberPolar()
-- [ ] ComplexNumberPolar(double, double)
-- [ ] ComplexNumberPolar(ComplexNumber)
-- [ ] getRadius(): double
-- [ ] getTheta(): double
-- [ ] toString(): String
-- [ ] mult(ComplexNumberPolar): ComplexNumberPolar
-- [ ] div(ComplexNumberPolar): ComplexNumberPolar
-- [ ] pow(int): ComplexNumberPolar
-- [ ] roots(int): ComplexNumberPolar[]
+- [x] ComplexNumberPolar()
+- [x] ComplexNumberPolar(double, double)
+- [x] ComplexNumberPolar(ComplexNumber)
+- [x] getRadius(): double
+- [x] getTheta(): double
+- [x] toString(): String
+- [x] mult(ComplexNumberPolar): ComplexNumberPolar
+- [x] div(ComplexNumberPolar): ComplexNumberPolar
+- [x] pow(int): ComplexNumberPolar
+- [x] roots(int): ComplexNumberPolar[]
 
 ## Notes
 * Function mult(ComplexNumberPolar rhs) multiplies two complex numbers in polar form, 𝑡ℎ𝑖𝑠 ∗ 𝑟ℎ𝑠

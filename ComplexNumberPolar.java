@@ -4,13 +4,19 @@ public class ComplexNumberPolar extends ComplexNumber {
     private double theta;
 
     public ComplexNumberPolar() {
-        radius = 0;
-        theta = 1;
+        this.radius = 0;
+        this.theta = 0;
+
+        super.real = this.radius * Math.cos(this.theta);
+        super.imag = this.radius * Math.sin(this.theta);
     }
 
     public ComplexNumberPolar(double radius, double theta) {
         this.radius = radius;
         this.theta = theta;
+
+        super.real = this.radius * Math.cos(this.theta);
+        super.imag = this.radius * Math.sin(this.theta);
     }
 
     public ComplexNumberPolar(ComplexNumber cn) throws ArithmeticException {
@@ -18,6 +24,8 @@ public class ComplexNumberPolar extends ComplexNumber {
         this.radius = Math.sqrt(Math.pow(cn.real, 2) + Math.pow(cn.imag, 2));
         try {
             this.theta = Math.atan(cn.imag/cn.real);
+            super.real = this.radius * Math.cos(this.theta);
+            super.imag = this.radius * Math.sin(this.theta);
         } catch(ArithmeticException e) {
             System.out.println("Cannot divide by 0");
         }
@@ -33,7 +41,12 @@ public class ComplexNumberPolar extends ComplexNumber {
 
     @Override
     public String toString() {
-        return "";
+        String output = "";
+        return "" + String.format("%.6f", this.real) + " + " + 
+            String.format("%.6f", this.imag) + "i : " + 
+            String.format("%.6f", this.radius) + 
+            "(cos(" + String.format("%.6f", this.theta) + 
+            ") + i sin(" + String.format("%.6f", this.theta) + "))";
     }
 
     public ComplexNumberPolar mult(ComplexNumberPolar rhs) {
